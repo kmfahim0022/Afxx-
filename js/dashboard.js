@@ -26,6 +26,7 @@ loadRevenue();
 loadDownloads();
 loadRecentUsers();
 loadRecentPayments();
+drawLineChart();
 
 });
 
@@ -201,6 +202,52 @@ paymentBody.innerHTML += `
 `;
 
 });
+
+});
+
+}
+
+function drawLineChart() {
+
+const lineCtx = document.getElementById("lineChart");
+
+new Chart(lineCtx, {
+
+type: "line",
+
+data: {
+
+labels: [
+"Mon",
+"Tue",
+"Wed",
+"Thu",
+"Fri",
+"Sat",
+"Sun"
+],
+
+datasets: [{
+
+label: "Downloads",
+
+data: [
+12,
+25,
+40,
+18,
+60,
+44,
+90
+],
+
+fill: false,
+
+tension: 0.4
+
+}]
+
+}
 
 });
 
