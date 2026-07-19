@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
+    background-size:300% 300%;
+    animation:bgMove 10s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.login-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-card{
+    width:400px;
+    max-width:100%;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h1{
+    color:#ffffff;
+    font-size:36px;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.logo p{
+    color:#cbd5e1;
+    margin-top:8px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.input-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#38bdf8;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px 15px 15px 45px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    font-size:16px;
+}
+
+.input-box input::placeholder{
+    color:#cbd5e1;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(79,70,229,.6);
+}
+
+.register-link{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+a{
+    color:#cbd5e1;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    margin-top:10px;
+}
+
+a:hover{
+    color:#38bdf8;
+}
+
+@media(max-width:480px){
+
+.login-card{
+    padding:25px;
+}
+
+.logo h1{
+    font-size:28px;
+}
+
+.input-box input{
+    font-size:15px;
+}
+
+.login-btn{
+    font-size:16px;
+}
+
+}
+
+
