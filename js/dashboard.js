@@ -24,6 +24,8 @@ return;
 loadUsers();
 loadRevenue();
 loadDownloads();
+loadRecentUsers();
+loadRecentPayments();
 
 });
 
@@ -134,3 +136,72 @@ premium
 
 }
 
+function loadRecentUsers(){
+
+const usersBody =
+document.getElementById("usersBody");
+
+const usersRef = ref(db,"users");
+
+onValue(usersRef,(snapshot)=>{
+
+usersBody.innerHTML="";
+
+snapshot.forEach((child)=>{
+
+const data = child.val();
+
+usersBody.innerHTML += `
+
+<tr>
+
+<td>${data.name}</td>
+
+<td>${data.email}</td>
+
+<td>${data.premium ? "Yes":"No"}</td>
+
+</tr>
+
+`;
+
+});
+
+});
+
+}
+
+function loadRecentPayments(){
+
+const paymentBody =
+document.getElementById("paymentsBody");
+
+const paymentRef = ref(db,"payments");
+
+onValue(paymentRef,(snapshot)=>{
+
+paymentBody.innerHTML="";
+
+snapshot.forEach((child)=>{
+
+const pay = child.val();
+
+paymentBody.innerHTML += `
+
+<tr>
+
+<td>${pay.user}</td>
+
+<td>${pay.amount} TK</td>
+
+<td>${pay.status}</td>
+
+</tr>
+
+`;
+
+});
+
+});
+
+}
